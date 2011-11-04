@@ -51,6 +51,7 @@ PSTricks, with various fillings for the body of the lines.
 %doc %{_texmfdistdir}/doc/generic/pst-thick/pst-thick-doc.tex
 #- source
 %doc %{_texmfdistdir}/source/generic/pst-thick/Makefile
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -61,3 +62,5 @@ PSTricks, with various fillings for the body of the lines.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
