@@ -52,3 +52,17 @@ PSTricks, with various fillings for the body of the lines.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.0-2
++ Revision: 755484
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.0-1
++ Revision: 719402
+- texlive-pst-thick
+- texlive-pst-thick
+- texlive-pst-thick
+- texlive-pst-thick
+
