@@ -1,6 +1,6 @@
 Name:		texlive-pst-thick
 Version:	16369
-Release:	1
+Release:	2
 Summary:	Drawing very thick lines and curves
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-thick
