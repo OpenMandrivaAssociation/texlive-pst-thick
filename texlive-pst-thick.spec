@@ -3,7 +3,7 @@ Version:	16369
 Release:	2
 Summary:	Drawing very thick lines and curves
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-thick
+URL:		https://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-thick
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-thick.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-thick.doc.r%{version}.tar.xz
