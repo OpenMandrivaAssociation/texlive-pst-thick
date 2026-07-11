@@ -1,49 +1,22 @@
-Name:		texlive-pst-thick
-Version:	16369
-Release:	2
+%global tl_name pst-thick
+%global tl_revision 16369
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.0
+Release:	%{tl_revision}.1
 Summary:	Drawing very thick lines and curves
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/graphics/pstricks/contrib/pst-thick
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-thick.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-thick.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-thick.source.r%{version}.tar.xz
+License:	lppl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-thick.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-thick.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/pst-thick.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The package supports drawing of very thick lines and curves in
-PSTricks, with various fillings for the body of the lines.
+The package supports drawing of very thick lines and curves in PSTricks,
+with various fillings for the body of the lines.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/generic/pst-thick/pst-thick.tex
-%{_texmfdistdir}/tex/latex/pst-thick/pst-thick.sty
-%doc %{_texmfdistdir}/doc/generic/pst-thick/Changes
-%doc %{_texmfdistdir}/doc/generic/pst-thick/README
-%doc %{_texmfdistdir}/doc/generic/pst-thick/pst-thick-doc.bib
-%doc %{_texmfdistdir}/doc/generic/pst-thick/pst-thick-doc.pdf
-%doc %{_texmfdistdir}/doc/generic/pst-thick/pst-thick-doc.tex
-#- source
-%doc %{_texmfdistdir}/source/generic/pst-thick/Makefile
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
